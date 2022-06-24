@@ -1,3 +1,5 @@
 ./scripts
 
 poetry.lock
+
+mecab/*
