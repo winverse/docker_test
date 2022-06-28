@@ -1,1 +1,1 @@
-docker run -d -p 8080:8080 --name python_test docker_test
+docker run -d -it -p 5002:5002 --name python_test docker_test

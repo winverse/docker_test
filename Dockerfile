@@ -12,7 +12,6 @@ ENV PYTHONUNBUFFERED=1 \
   PIP_NO_CACHE_DIR=off \
   PIP_DISABLE_PIP_VERSION_CHECK=on \
   PIP_DEFAULT_TIMEOUT=100 \
-  \
   # poetry
   # https://python-poetry.org/docs/configuration/#using-environment-variables
   POETRY_VERSION=1.1.13 \
@@ -48,6 +47,7 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=$POETRY_VERSION
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 WORKDIR $APP_PATH
+
 COPY ./ ./
 
 WORKDIR $APP_PATH/mecab
@@ -79,5 +79,3 @@ WORKDIR $APP_PATH
 
 RUN curl -s "https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh" | bash
 RUN pip3 install konlpy
-
-CMD ["/usr/app/.venv/bin/flask", "run"]
