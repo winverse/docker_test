@@ -1,5 +1,3 @@
-#!/bin/bash
-
 docker stop python_test
 
 docker rm python_test

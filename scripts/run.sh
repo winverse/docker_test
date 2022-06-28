@@ -1,3 +1,1 @@
-#!/bin/bash
-
-docker run -d -it --add-host host.docker.internal:host-gateway --name python_test docker_test
+docker run -d -p 8080:8080 --name python_test docker_test
